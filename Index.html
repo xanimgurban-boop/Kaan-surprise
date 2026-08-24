@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kaan</title>
+<style>
+body{font-family:Arial;text-align:center;background:#f3eee7;padding:30px}
+main{max-width:600px;margin:auto;background:white;padding:25px;border-radius:20px}
+button{display:block;width:100%;padding:14px;margin:10px 0;border:0;border-radius:10px;font-size:16px}
+</style>
+</head>
+<body>
+<main id="g">
+<h1>KAAN, VAN MİNÜT 🌝</h1>
+<p>Senin için küccük bişey hazırladım.</p>
+<button onclick="s()">Başla</button>
+</main>
+
+<script>
+let i=0;
+let q=[
+["Geçen yıl doğum gününden bir gün önce hayatında yaşanan tarihi olay neydi?",["Hayvanat bahçesindeki tüm ayıları özgürlüğe kavuşturdun.","NASA seninle iletişime geçti.","Türkiye ekonomisini kurtardın ve halkının kurtarıcısına dönüştün.","Akortistler grubuna bir maymuş dahil oldu."],3],
+["Sabah saat 6'da yaşadığın ve muhtemelen hayatının geri kalanında hatırlamak istemeyeceğin olay hangisiydi?",["Kimse yokken sesli mesajda “İyi ki varsın” diye bağırırken, dışarıdaki görevli amca bunu kendisine söylediğini sandı.","Metroda bozuk telefonun aniden yüksek sesle ötmeye başladı ve susmayınca utançtan telefonu duvara fırlattın.","Kalabalık bir ortamda birinin sana el salladığını sanıp el salladın ve aslında arkandaki kişiye el salladığını fark ettin.","Yanlışlıkla birine “anne” diye hitap edip hiçbir şey olmamış gibi uzaklaşmaya çalıştın."],1],
+["“Doğruluk mu cesaret mi?” oyununda cesareti seçince kendini hangi durumda buldun?",["Bakkala gidip 25 kuruşa ne alabileceğini sordun ve amcanın senin deli olduğunu sanmasını sağladın.","Aileni arayıp okuldan atıldığını söyledin.","The Last of Us evrenine ışınlanıp Joel'i kurtardın.","Kratos'u aradın."],0],
+["Kıyafetine işeyerek sana sevgisini en sağlıklı şekilde ifade eden canlı hangisiydi?",["Sonic","Erdoğan","Batman isimli siyah-beyaz tekir kedi","Şimşek McQueen"],2],
+["En sevdiğin oyun hangisi?",["The Last of Us","God of War","Phasmophobia","Nimet seçilmez, hepsine saygı duyulur."],3]
+];
+
+function s(){
+let x=q[i],h="<p>Soru "+(i+1)+"/5</p><h2>"+x[0]+"</h2>";
+x[1].forEach((a,n)=>h+="<button onclick='c("+n+")'>"+a+"</button>");
+g.innerHTML=h
+}
+function c(n){
+let x=q[i],ok=n==x[2];
+g.innerHTML="<h2>"+(ok?"Doğru! 🎉":"Yanlış! 👽")+"</h2>"+
+(!ok?"<p>Doğru cevap:<br><b>"+x[1][x[2]]+"</b></p>":"")+
+"<button onclick='"+(i<4?"i++;s()":"f()")+"'>Devam et</button>"
+}
+function f(){
+g.innerHTML="<h1>TEST TAMAMLANDI.</h1><p>Hakkında gereğinden fazla bilgiye sahip olduğum resmi olarak kanıtlandı.</p><p>Bu bilgilerin günlük hayatta sana herhangi bir faydası olup olmadığı henüz araştırılıyor.</p><h2>İyi ki doğdun Kaan Ulaş.</h2><h1>İyi ki miyavsın. 🐈</h1>"
+}
+</script>
+</body>
+</html>
